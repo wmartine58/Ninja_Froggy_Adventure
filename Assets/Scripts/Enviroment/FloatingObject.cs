@@ -44,13 +44,10 @@ public class FloatingObject : MonoBehaviour
         if (Vector2.Distance(new Vector2(transform.position.x, 0), new Vector2(startPosition.x, 0)) < 0.01f)
         {
             xDisplacement = UnityEngine.Random.Range(startPosition.x - xMaxPoxition, startPosition.x + xMaxPoxition);
-            Debug.Log("Distancia x: " + Vector2.Distance(new Vector2(transform.position.x, 0), new Vector2(startPosition.x, 0)));
-            Debug.Log("nuevo xDisplacement: " + xDisplacement);
         }
         else if (Vector2.Distance(new Vector2(transform.position.x, 0), new Vector2(xDisplacement, 0)) < 0.01f)
         {
             xDisplacement = startPosition.x;
-            Debug.Log("reseteando xDisplacement a: " + xDisplacement);
         }
 
         if (Vector2.Distance(new Vector2(0, transform.position.y), new Vector2(0, startPosition.y)) < 0.01f)
