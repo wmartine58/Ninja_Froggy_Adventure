@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class OpenDoorLevel01 : MonoBehaviour
+public class OpenDoorLevel007 : MonoBehaviour
 {
     private bool inDoor = false;
     private float doorTime = 1;
@@ -12,6 +12,7 @@ public class OpenDoorLevel01 : MonoBehaviour
     private GameObject player;
     private TransitionImage transitionImage;
     private GameDataManager gameDataManager;
+    public string[] levelNames;
 
     private void Awake()
     {
@@ -125,7 +126,7 @@ public class OpenDoorLevel01 : MonoBehaviour
         if (gameObject.name == "Door10" || gameObject.name == "Door11" || gameObject.name == "Door12")
         {
             gameDataManager.SaveData();
-            SceneManager.LoadScene("Level06B");
+            SceneManager.LoadScene(levelNames[1]);
         }
 
         if (gameObject.name == "Door13")
@@ -136,7 +137,7 @@ public class OpenDoorLevel01 : MonoBehaviour
 
         if (gameObject.name == "Door14")
         {
-            SceneManager.LoadScene("Level06A");
+            SceneManager.LoadScene(levelNames[0]);
         }
 
         transitionImage.StartTransition(0f, 1, 0.3f);

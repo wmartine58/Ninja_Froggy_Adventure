@@ -11,11 +11,13 @@ public class OpenDoor : MonoBehaviour
     private float doorTime;
     private bool inDoor = false;
     private GameObject player;
+    private TimeController timeController;
 
     private void Awake()
     {
         doorTime = startTime;
         player = GameObject.Find("StandarInterface").GetComponent<Initialization>().player;
+        timeController = GameObject.Find("StandarInterface").GetComponent<Initialization>().timeController;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -50,14 +52,16 @@ public class OpenDoor : MonoBehaviour
 
     private void ChangeInstance()
     {
-        GameObject.Find("TransitionImage").GetComponent<TransitionImage>().StartTransition(0.3f, 3, 0.3f);
+        timeController.StopTime();
+        GameObject.Find("TransitionImage").GetComponent<TransitionImage>().StartTransition(0.1f, 3, 0.3f);
         StartCoroutine(ChangePlayerPosition());
     }
 
     private IEnumerator ChangePlayerPosition()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(1);
         player.transform.position = teleportPosition;
         player.GetComponent<SpriteRenderer>().flipX = playerFlip;
+        timeController.RestoreTime();
     }
 }

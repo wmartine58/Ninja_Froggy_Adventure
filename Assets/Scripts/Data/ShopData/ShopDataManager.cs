@@ -154,6 +154,7 @@ public class ShopDataManager : MonoBehaviour
         {
             GameData newPlayerData = new GameData()
             {
+                levels = gameData.levels,
                 levelCompleted = gameData.levelCompleted,
                 checkpointReachedLevel = gameData.checkpointReachedLevel,
                 startLevel = gameData.startLevel,

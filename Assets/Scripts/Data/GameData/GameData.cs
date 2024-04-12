@@ -5,7 +5,8 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    public string[,] levelsList;
+    //public string[,] levelsList;
+    public string[] levels;
 
     public bool levelCompleted;
     public string checkpointReachedLevel;

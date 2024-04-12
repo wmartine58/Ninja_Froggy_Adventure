@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameDataManager : MonoBehaviour
 {
+    public string[] levels;
     public string playerSaveFile;
     public string levelSaveFile;
     public GameData gameData;
@@ -78,6 +79,7 @@ public class GameDataManager : MonoBehaviour
             
             if (!File.Exists(levelSaveFile))
             {
+                levels = gameData.levels;
                 playerInfo.fruits = gameData.fruits;
                 playerInfo.gems = gameData.gems;
                 playerInfo.briefs = gameData.briefs;
@@ -104,6 +106,7 @@ public class GameDataManager : MonoBehaviour
         {
             string content = File.ReadAllText(playerSaveFile);
             gameData = JsonUtility.FromJson<GameData>(content);
+            levels = gameData.levels;
             playerInfo.fruits = gameData.fruits;
             playerInfo.gems = gameData.gems;
             playerInfo.briefs = gameData.briefs;
@@ -199,6 +202,7 @@ public class GameDataManager : MonoBehaviour
 
         GameData newPlayerData = new GameData()
         {
+            levels = levels,
             levelCompleted = levelCompleted,
             checkpointReachedLevel = checkpointReachedLevel,
             startLevel = startLevel,
@@ -243,6 +247,7 @@ public class GameDataManager : MonoBehaviour
 
             GameData newPlayerData = new GameData()
             {
+                levels = levels,
                 levelCompleted = gameData.levelCompleted,
                 checkpointReachedLevel = gameData.checkpointReachedLevel,
                 startLevel = gameData.startLevel,

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class HostPeopleLevel03 : MonoBehaviour
+public class HostPeopleLevel005 : MonoBehaviour
 {
     public GameObject[] people;
     public GameObject[] trappedPeople;
@@ -12,15 +12,16 @@ public class HostPeopleLevel03 : MonoBehaviour
     public GameObject door;
     public GameObject groundLock;
     public GameObject dialogue;
-    public HomeArriveLevel03 homeArriveLevel03;
+    public HomeArriveLevel005 homeArriveLevel005;
+    public string[] levelNames;
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Level03A")
+        if (SceneManager.GetActiveScene().name == levelNames[0])
         {
-            if (DisableEnemiesLevel03.disableEnemiesLevel03 != null)
+            if (DisableEnemiesLevel005.disableEnemiesLevel005 != null)
             {
-                if (DisableEnemiesLevel03.disableEnemiesLevel03.canDisableEnemies)
+                if (DisableEnemiesLevel005.disableEnemiesLevel005.canDisableEnemies)
                 {
                     DisableRockLock();
                 }
@@ -32,7 +33,7 @@ public class HostPeopleLevel03 : MonoBehaviour
                 EnableHostPeopleEvent();
             }
 
-            if (GameObject.Find("ArrivePoint").GetComponent<HomeArriveLevel03>().gifRecived)
+            if (GameObject.Find("ArrivePoint").GetComponent<HomeArriveLevel005>().gifRecived)
             {
                 door.SetActive(false);
             }
@@ -45,7 +46,7 @@ public class HostPeopleLevel03 : MonoBehaviour
                 }
             }
 
-            if (homeArriveLevel03.gifRecived)
+            if (homeArriveLevel005.gifRecived)
             {
                 groundLock.SetActive(false);
             }

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class DisableEnemiesLevel03 : MonoBehaviour
+public class DisableEnemiesLevel005 : MonoBehaviour
 {
-    public static DisableEnemiesLevel03 disableEnemiesLevel03;
+    public static DisableEnemiesLevel005 disableEnemiesLevel005;
     public bool canDisableEnemies;
     private EnableObjects enableObjects;
     private bool canDisableDoor = true;
@@ -13,12 +13,13 @@ public class DisableEnemiesLevel03 : MonoBehaviour
     private bool finishEvent = false;
     private GameObject door;
     private GameObject dialogue;
+    public string[] levelNames;
 
     private void Awake()
     {
-        if (DisableEnemiesLevel03.disableEnemiesLevel03 == null)
+        if (DisableEnemiesLevel005.disableEnemiesLevel005 == null)
         {
-            DisableEnemiesLevel03.disableEnemiesLevel03 = this;
+            DisableEnemiesLevel005.disableEnemiesLevel005 = this;
         }
         else
         {
@@ -33,7 +34,7 @@ public class DisableEnemiesLevel03 : MonoBehaviour
         enableObjects = GameObject.Find("LevelEvents").GetComponentInChildren<EnableObjects>();
         int totalDisabledEnemies = 0;
 
-        if (SceneManager.GetActiveScene().name == "Level03B")
+        if (SceneManager.GetActiveScene().name == levelNames[1])
         {
             for (int i = 0; i < enableObjects.enemies.Length; i++)
             {
@@ -54,7 +55,7 @@ public class DisableEnemiesLevel03 : MonoBehaviour
             DisableEnemies();
         }
 
-        if (SceneManager.GetActiveScene().name != "Level03A" && SceneManager.GetActiveScene().name != "Level03B")
+        if (SceneManager.GetActiveScene().name != levelNames[0] && SceneManager.GetActiveScene().name != levelNames[1])
         {
             Destroy(gameObject);
         }

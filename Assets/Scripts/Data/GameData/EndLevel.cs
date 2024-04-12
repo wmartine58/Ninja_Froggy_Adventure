@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndLevel : MonoBehaviour
 {
-    public string nextLevel;
+    private string nextLevel;
     private float waitTime = 4;
     private GameDataManager gameDataManager;
     private InventoryDataManager inventoryDataManager;
@@ -45,6 +45,33 @@ public class EndLevel : MonoBehaviour
         gameDataManager.levelCompleted = true;
         gameDataManager.SaveData();
         inventoryDataManager.SaveData();
+        SetNextLevel();
         SceneManager.LoadScene(nextLevel);
+    }
+
+    private void SetNextLevel()
+    {
+        int nextLevelPosition = 0;
+
+        for (int i = 0; i < gameDataManager.gameData.levels.Length; i++)
+        {
+            if (gameDataManager.gameData.levels[i] == SceneManager.GetActiveScene().name)
+            {
+                if (i < gameDataManager.gameData.levels.Length - 1)
+                {
+                    nextLevelPosition = i + 1;
+                }
+            }
+        }
+
+        if (nextLevelPosition > 0)
+        {
+            nextLevel = gameDataManager.gameData.levels[nextLevelPosition];
+        }
+        else
+        {
+            nextLevel = "MainMenu";
+        }
+        
     }
 }

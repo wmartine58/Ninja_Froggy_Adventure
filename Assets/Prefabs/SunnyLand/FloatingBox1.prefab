@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3458565700722801294}
   m_Layer: 0
   m_Name: tileset_102
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8128144983787515961}
   m_Layer: 0
   m_Name: tileset_89
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 2836738869962412685}
   m_Layer: 0
   m_Name: tileset_101
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 5759600884585276441}
   m_Layer: 0
   m_Name: tileset_90
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -382,7 +382,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 6137812176953235541}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e6c0c75c16b23714a936afd2813f6137, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

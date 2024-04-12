@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ActivePanelsLevel06 : MonoBehaviour
+public class ActivePanelsLevel007 : MonoBehaviour
 {
     public int[] panelListState;
     private bool canInit;
     private bool canLoadState;
     private GameObject[] panelList;
-    private static ActivePanelsLevel06 activePanelsLevel06;
+    private static ActivePanelsLevel007 activePanelsLevel007;
+    public string[] levelNames;
 
     private void Awake()
     {
         canInit = true;
 
-        if (ActivePanelsLevel06.activePanelsLevel06 == null)
+        if (ActivePanelsLevel007.activePanelsLevel007 == null)
         {
-            ActivePanelsLevel06.activePanelsLevel06 = this;
+            ActivePanelsLevel007.activePanelsLevel007 = this;
         }
         else
         {
@@ -29,18 +30,18 @@ public class ActivePanelsLevel06 : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().name == "Level06A" && canInit)
+        if (SceneManager.GetActiveScene().name == levelNames[0] && canInit)
         {
             SetStates();
         }
 
-        if (SceneManager.GetActiveScene().name == "Level06B")
+        if (SceneManager.GetActiveScene().name == levelNames[1])
         {
             canLoadState = true;
             canInit = false;
         }
 
-        if (SceneManager.GetActiveScene().name == "Level06A" && canLoadState)
+        if (SceneManager.GetActiveScene().name == levelNames[0] && canLoadState)
         {
             LoadPanelStates();
         }

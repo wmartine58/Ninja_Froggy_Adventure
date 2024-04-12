@@ -99,9 +99,13 @@ public class Shop : MonoBehaviour
         totalGemsText.text = shopDataManager.gems.ToString();
         totalLifesText.text = shopDataManager.lifes.ToString();
     }
+
     private void OnEnable()
     {
-        shopDataManager.LoadData();
+        if (!isMerchantShop)
+        {
+            shopDataManager.LoadData();
+        }
     }
 
     public void SetButtonSounds()

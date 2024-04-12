@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomeArriveLevel03 : MonoBehaviour
+public class HomeArriveLevel005 : MonoBehaviour
 {
     public GameObject woman;
     public GameObject[] people;
@@ -12,11 +12,11 @@ public class HomeArriveLevel03 : MonoBehaviour
 
     void Update()
     {
-        if (DisableEnemiesLevel03.disableEnemiesLevel03 != null)
+        if (DisableEnemiesLevel005.disableEnemiesLevel005 != null)
         {
             int totalPeople = 0;
 
-            if (DisableEnemiesLevel03.disableEnemiesLevel03.canDisableEnemies)
+            if (DisableEnemiesLevel005.disableEnemiesLevel005.canDisableEnemies)
             {
                 woman.SetActive(true);
             }

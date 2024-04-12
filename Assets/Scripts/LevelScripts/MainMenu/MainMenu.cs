@@ -8,6 +8,7 @@ using System;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField]  private string[] levels;
     public AudioSource[] clips;
     public MainMenuMessage mainMenuMessage;
     public float waitTime;
@@ -55,7 +56,7 @@ public class MainMenu : MonoBehaviour
 
         GenerateNewFile();
         clips[0].Play();
-        SceneManager.LoadScene("Level01");
+        SceneManager.LoadScene("Level001");
     }
 
     public void SetAdData()
@@ -110,6 +111,8 @@ public class MainMenu : MonoBehaviour
     {
         GameData newPlayerData = new GameData()
         {
+            levels = levels,
+
             checkpointReachedLevel = "Level01",
             levelCompleted = false,
             startLevel = true,
@@ -117,7 +120,7 @@ public class MainMenu : MonoBehaviour
             fruits = 0,
             gems = 0,
             briefs = 0,
-            lifes = 4,
+            lifes = 400,
 
             currentHearts = 3,
             currentActiveHearts = 3,

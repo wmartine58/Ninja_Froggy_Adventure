@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChangePositionCameraLevel01 : MonoBehaviour
+public class ChangePositionCameraLevel007 : MonoBehaviour
 {
     public Camera[] cameras;
 

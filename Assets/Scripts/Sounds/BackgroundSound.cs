@@ -56,16 +56,21 @@ public class BackgroundSound : MonoBehaviour
 
             if (soundTime <= 0)
             {
-                if (soundList.Length == i + 1)
-                {
-                    i = 0;
-                }
-                else
-                {
-                    soundList[i].Stop();
-                    i++;
-                }
+                //if (soundList.Length == i + 1)
+                //{
+                //    i = 0;
+                //}
+                //else
+                //{
+                //    soundList[i].Stop();
+                //    i++;
+                //}
 
+                //soundTime = soundList[i].clip.length + waitTime;
+                //soundList[i].Play();
+
+                soundList[i].Stop(); // Detener el AudioSource actual
+                i = (i + 1) % soundList.Length; // Avanzar al siguiente AudioSource circularmente
                 soundTime = soundList[i].clip.length + waitTime;
                 soundList[i].Play();
             }

@@ -12,21 +12,11 @@ public class JumpBox : MonoBehaviour
     public GameObject boxCollider;
     public Collider2D coll2D;
     public GameObject element;
-    //public AudioSource[] clips;
     public bool isBroken = false;
     public float disableTime = 0.5f;
     public Rigidbody2D rb2D;
     public BreakBox breakBox;
     public Vector3[] brokenPartPositions;
-
-    //private void Awake()
-    //{
-    //    clips = new AudioSource[2];
-    //    clips[0] = GameObject.Find("HitBox").GetComponent<AudioSource>();
-    //    clips[1] = GameObject.Find("BreakBox").GetComponent<AudioSource>();
-    //    rb2D = GetComponentInParent<Rigidbody2D>();
-    //    SetElementParent();
-    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -40,76 +30,6 @@ public class JumpBox : MonoBehaviour
             breakBox.LoseLifeAndHit();
         }
     }
-
-    //private void SetElementParent()
-    //{
-    //    element.SetActive(false);
-        
-    //    if (element.GetComponent<BriefCollected>())
-    //    {
-    //        element.GetComponent<BriefCollected>().inBox = true;
-    //        element.transform.SetParent(GameObject.Find("BriefManager").transform);
-    //    }
-    //    else if (element.GetComponent<ItemCollected>())
-    //    {
-    //        element.GetComponent<ItemCollected>().inBox = true;
-    //        element.transform.SetParent(GameObject.Find("ItemManager").transform);
-    //    }
-    //}
-
-    //public void LoseLifeAndHit()
-    //{
-    //    lifes--;
-    //    animator.Play("Hit");
-    //    CheckLife();
-    //}
-
-    //public void CheckLife()
-    //{
-    //    if (lifes <= 0)
-    //    {
-    //        int brokenPartsLength = brokenParts.transform.childCount;
-    //        brokenPartPositions = new Vector3[brokenPartsLength];
-    //        clips[1].Play();
-            
-    //        for (int i = 0; i < brokenPartsLength; i++)
-    //        {
-    //            Transform brokenPart = brokenParts.transform.GetChild(i);
-    //            brokenPartPositions[i] = brokenPart.position;
-    //        }
-
-    //        rb2D.constraints = RigidbodyConstraints2D.FreezeAll;
-    //        element.transform.position = gameObject.transform.position;
-
-    //        if (element.GetComponent<BriefCollected>())
-    //        {
-    //            if (!element.GetComponent<BriefCollected>().isCollected)
-    //            {
-    //                element.GetComponent<BriefCollected>().inBox = false;
-    //                element.SetActive(true);
-    //            }
-    //        }
-    //        else if (element.GetComponent<ItemCollected>())
-    //        {
-    //            if (!element.GetComponent<ItemCollected>().isCollected)
-    //            {
-    //                element.GetComponent<ItemCollected>().inBox = false;
-    //                element.SetActive(true);
-    //            }
-    //        }
-            
-    //        boxCollider.SetActive(false);
-    //        coll2D.enabled = false;
-    //        brokenParts.SetActive(true);
-    //        spriteRederer.enabled = false;
-    //        isBroken = true;
-    //        StartCoroutine(DestroyBox());
-    //    }
-    //    else
-    //    {
-    //        clips[0].Play();
-    //    }
-    //}
 
     public IEnumerator DestroyBox()
     {
