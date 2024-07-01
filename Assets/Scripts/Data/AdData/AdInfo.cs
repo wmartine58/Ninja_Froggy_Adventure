@@ -11,6 +11,7 @@ public class AdInfo : MonoBehaviour
     public DateTime[] endDateList;
     public RewardType.Type[] rewardTypeList;
     public int[] amountList;
+    public RandomReward randomReward;
     private ShopDataManager shopDataManager;
     private AdDataManager adDataManager;
     private InterstitialAd _interstitialAd;
@@ -249,6 +250,7 @@ public class AdInfo : MonoBehaviour
                         adRewardButton.StartCount();
                         shopDataManager.SaveData();
                         adDataManager.SaveData();
+                        randomReward.HideRewardPanel();
                     }
                 }
             }

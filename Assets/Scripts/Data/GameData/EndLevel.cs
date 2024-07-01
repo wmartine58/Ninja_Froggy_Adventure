@@ -53,16 +53,16 @@ public class EndLevel : MonoBehaviour
     {
         int nextLevelPosition = 0;
 
-        for (int i = 0; i < gameDataManager.gameData.levels.Length; i++)
-        {
-            if (gameDataManager.gameData.levels[i] == SceneManager.GetActiveScene().name)
-            {
-                if (i < gameDataManager.gameData.levels.Length - 1)
-                {
-                    nextLevelPosition = i + 1;
-                }
-            }
-        }
+        //for (int i = 0; i < gameDataManager.gameData.levels.Length; i++)
+        //{
+        //    if (gameDataManager.gameData.levels[i] == SceneManager.GetActiveScene().name)
+        //    {
+        //        if (i < gameDataManager.gameData.levels.Length - 1)
+        //        {
+        //            nextLevelPosition = i + 1;
+        //        }
+        //    }
+        //}
 
         if (nextLevelPosition > 0)
         {

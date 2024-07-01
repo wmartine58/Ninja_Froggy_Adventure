@@ -68,67 +68,28 @@ public class PlayerSkillDataManager : MonoBehaviour
         }
         else
         {
-            //if (GameObject.Find("SkillsStore"))
-            //{
-            //    SkillsStore skillsStore = GameObject.Find("SkillsStore").GetComponent<SkillsStore>();
+            playerSkillInfo.skillNameList = new string[totalSkills];
+            playerSkillInfo.isEnabledList = new bool[totalSkills];
+            playerSkillInfo.selectedSkillList = new string[totalSelectedSkills];
 
-            //    if (skillsStore)
-            //    {
-            //        totalSkills = skillsStore.skillsInfo.Count;
-            //        playerSkillInfo.skillNameList = new string[totalSkills];
-            //        playerSkillInfo.isEnabledList = new bool[totalSkills];
-            //        playerSkillInfo.selectedSkillList = new string[totalSelectedSkills];
+            for (int i = 0; i < totalSkills; i++)
+            {
+                var item = skillsInfo[i];
+                playerSkillInfo.skillNameList[i] = item.title;
+                playerSkillInfo.isEnabledList[i] = false;
+            }
 
-            //        for (int i = 0; i < totalSkills; i++)
-            //        {
-            //            var item = skillsStore.skillsInfo[i];
-            //            playerSkillInfo.skillNameList[i] = item.title;
-            //            playerSkillInfo.isEnabledList[i] = false;
-            //        }
+            for (int i = 0; i < totalSelectedSkills; i++)
+            {
+                playerSkillInfo.selectedSkillList[i] = "None";
+            }
 
-            //        for (int i = 0; i < totalSelectedSkills; i++)
-            //        {
-            //            playerSkillInfo.selectedSkillList[i] = "None";
-            //        }
-
-            //        if (File.Exists(playerSaveFile))
-            //        {
-            //            string content = File.ReadAllText(playerSaveFile);
-            //            gameData = JsonUtility.FromJson<GameData>(content);
-            //            briefs = gameData.briefs;
-            //        }
-            //    }
-            //}
-            //else
-            //{
-                playerSkillInfo.skillNameList = new string[totalSkills];
-                playerSkillInfo.isEnabledList = new bool[totalSkills];
-                playerSkillInfo.selectedSkillList = new string[totalSelectedSkills];
-
-                for (int i = 0; i < totalSkills; i++)
-                {
-                    var item = skillsInfo[i];
-                    playerSkillInfo.skillNameList[i] = item.title;
-                    playerSkillInfo.isEnabledList[i] = false;
-                }
-
-                //playerSkillInfo.skillNameList[0] = "Dash";
-                //playerSkillInfo.skillNameList[1] = "Triple Jump";
-                //playerSkillInfo.skillNameList[2] = "Firy";
-                //playerSkillInfo.skillNameList[3] = "Frost Guardian";
-
-                for (int i = 0; i < totalSelectedSkills; i++)
-                {
-                    playerSkillInfo.selectedSkillList[i] = "None";
-                }
-
-                if (File.Exists(playerSaveFile))
-                {
-                    string content = File.ReadAllText(playerSaveFile);
-                    gameData = JsonUtility.FromJson<GameData>(content);
-                    briefs = gameData.briefs;
-                }
-            //}
+            if (File.Exists(playerSaveFile))
+            {
+                string content = File.ReadAllText(playerSaveFile);
+                gameData = JsonUtility.FromJson<GameData>(content);
+                briefs = gameData.briefs;
+            }
         }
     }
 

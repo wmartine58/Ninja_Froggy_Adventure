@@ -1171,7 +1171,7 @@ GameObject:
   - component: {fileID: 4670001914818562560}
   - component: {fileID: 5741278836596390916}
   m_Layer: 5
-  m_Name: ActionButton (1)
+  m_Name: ActionButton1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1318,7 +1318,7 @@ GameObject:
   - component: {fileID: 2480876727738191120}
   - component: {fileID: 8563765824521939696}
   m_Layer: 5
-  m_Name: ActionButton (2)
+  m_Name: ActionButton2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1464,7 +1464,7 @@ GameObject:
   - component: {fileID: 2792163791217601128}
   - component: {fileID: 2792163791217601131}
   m_Layer: 5
-  m_Name: ActionButton
+  m_Name: WeaponButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1730,6 +1730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData:
+    levels: []
     levelCompleted: 0
     checkpointReachedLevel: 
     startLevel: 0
@@ -2677,11 +2678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 252408454bb39484d8037601a2fd3379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonPositions:
-  - {x: 275, y: -58.99999}
-  - {x: 290, y: 22.5}
-  - {x: 215, y: -5}
-  - {x: 190, y: -75}
 --- !u!1 &8479330995409748776
 GameObject:
   m_ObjectHideFlags: 0

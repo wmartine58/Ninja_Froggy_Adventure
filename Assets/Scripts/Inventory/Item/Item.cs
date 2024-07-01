@@ -34,10 +34,12 @@ public class Item : MonoBehaviour
 
     public AudioSource clip;
     public float disableTime = 0.05f;
+    private GameObject mobileControls;
 
     public void Awake()
     {
         weaponManager = GameObject.Find("StandarInterface").GetComponent<Initialization>().weaponManager;
+        mobileControls = GameObject.Find("StandarInterface").GetComponent<Initialization>().mobileControls;
         inventory = GameObject.Find("StandarInterface").GetComponent<Initialization>().inventory.GetComponent<Inventory>();
 
         if (itemType == ItemType.Potion)
@@ -85,6 +87,7 @@ public class Item : MonoBehaviour
                 slot.GetComponent<Image>().color = Color.red;
                 inventory.UnequipOtherWeapons(id);
                 weapon.SetActive(true);
+                mobileControls.transform.GetChild(2).GetComponent<Button>().interactable = true;
 
                 switch (subItemType)
                 {
@@ -102,6 +105,7 @@ public class Item : MonoBehaviour
             {
                 slot.GetComponent<Image>().color = new Color(255, 255,255, 0.39f);
                 weapon.SetActive(false);
+                mobileControls.transform.GetChild(2).GetComponent<Button>().interactable = false;
             }
         }
         else if (itemType == ItemType.Potion)
@@ -149,6 +153,7 @@ public class Item : MonoBehaviour
                         break;
                 }
 
+                mobileControls.transform.GetChild(2).GetComponent<Button>().interactable = false;
                 weapon.gameObject.SetActive(false);
             }
 

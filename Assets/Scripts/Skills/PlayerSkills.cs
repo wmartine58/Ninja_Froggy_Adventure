@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerSkills : MonoBehaviour
 {
@@ -25,6 +26,11 @@ public class PlayerSkills : MonoBehaviour
     private void Start()
     {
         skillName = playerSkillInfo.selectedSkillList[skillPos];
+
+        if (skillName == "None")
+        {
+            transform.GetComponent<Button>().interactable = false;
+        }
     }
 
     public void ActivateSkill()
