@@ -120,7 +120,7 @@ public class MainMenu : MonoBehaviour
             fruits = 0,
             gems = 0,
             briefs = 0,
-            lifes = 400,
+            lifes = 100,
 
             currentHearts = 3,
             currentActiveHearts = 3,

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idPos: 2
   tittle: Basic Sword
-  image: {fileID: 21300000, guid: d625705c2b10393418fa45b27c7370b0, type: 3}
+  image: {fileID: 21300000, guid: 98745e4fbef098a47b069fcbf9abc43d, type: 3}
   amount: 1
   waitTime: 30
